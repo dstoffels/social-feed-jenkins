@@ -31,7 +31,7 @@ pipeline {
 
         stage("Push Image"){
             steps{
-                withCredentials([usernamePassword(credentialsId: 'personal-docker-credentials', usernameVariable: "DOCKER_USERNAME", passwordVariable: "DOCKER_PASSWORD")]) {
+                withCredentials([usernamePassword(credentialsId: 'personal-docker-hub-creds', usernameVariable: "DOCKER_USERNAME", passwordVariable: "DOCKER_PASSWORD")]) {
                     sh """
                     docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
                     docker push dstoffels/social-feed-jenkins:$BUILD_NUMBER
