@@ -50,7 +50,7 @@ pipeline {
                     \$SSH "docker stop social-feed"
                     \$SSH "docker rm social-feed"
                     \$SSH "docker pull dstoffels/social-feed-jenkins:latest"
-                    \$SSH "docker run -d p 80:80 --name social-feed dstoffels/social-feed-jenkins:latest"
+                    \$SSH "docker run -d -p 80:80 --name social-feed dstoffels/social-feed-jenkins:latest"
                     '''
                 }
             }
