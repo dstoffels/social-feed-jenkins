@@ -58,6 +58,7 @@ pipeline {
                         }
                         finally {
                             sh '''
+                            SSH="ssh -o StrictHostKeyChecking=no ubuntu@3.138.114.212"
                             \$SSH "docker pull dstoffels/social-feed-jenkins:latest"
                             \$SSH "docker run -d -p 80:80 --name social-feed dstoffels/social-feed-jenkins:latest"
                             '''
