@@ -45,12 +45,12 @@ pipeline {
         stage("Deploy") {
             steps{
                 sshagent(['key-ssh-credentials']) {
-                    sh """
+                    sh '''
                     SSH="ssh -o StrictHostKeyChecking=no ubuntu@3.138.114.212"
                     \$SSH "docker stop social-feed && docker rm social-feed"
                     \$SSH "docker pull dstoffels/social-feed-jenkins:$BUILD_NUMBER"
                     \$SSH "docker run -d p 80:80 --name social-feed dstoffels/social-feed-jenkins:$BUILD_NUMBER"
-                    """
+                    '''
                 }
             }
         }
