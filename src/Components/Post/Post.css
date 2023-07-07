@@ -1,3 +1,7 @@
 .icons-span {
-  margin-left: 578px;
+	margin-left: 578px;
+}
+
+.like-btn:hover {
+	cursor: pointer;
 }
