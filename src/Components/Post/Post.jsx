@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ReactComponent as ThumbsDown } from '../../SVG/thumbs-down-solid.svg';
 import { ReactComponent as ThumbsUp } from '../../SVG/thumbs-up-solid.svg';
 import './Post.css';
